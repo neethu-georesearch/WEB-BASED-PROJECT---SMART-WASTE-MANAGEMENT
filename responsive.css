@@ -1,0 +1,253 @@
+/* 
+ * responsive.css
+ * Responsive design adjustments for different screen sizes
+ * UPDATED for new fixed layout
+ */
+
+/* Large Desktop (default styles) */
+/* No adjustments needed here - base styles apply */
+
+/* Medium Desktop */
+@media (max-width: 1280px) {
+    .sidebar {
+      width: 340px;
+    }
+    
+    .sidebar-container {
+      padding: 0.75rem;
+      gap: 0.5rem;
+    }
+    
+    .metric-card {
+      padding: 0.6rem;
+    }
+    
+    .metric-value {
+      font-size: 1.3rem;
+    }
+    
+    .chart-wrapper {
+      height: 180px;
+    }
+  }
+  
+  /* Small Desktop / Tablet Landscape */
+  @media (max-width: 1024px) {
+    .sidebar {
+      width: 320px;
+    }
+    
+    .sidebar-container {
+      padding: 0.75rem;
+      gap: 0.5rem;
+    }
+    
+    .card {
+      padding: 0.75rem;
+    }
+    
+    .card h4 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .bin-list-container {
+      max-height: 250px;
+    }
+    
+    .collapsible-content.expanded {
+      height: 200px;
+    }
+    
+    .chart-wrapper {
+      height: 160px;
+    }
+  }
+  
+  /* Tablet Portrait */
+  @media (max-width: 992px) {
+    body {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      height: 60vh;
+    }
+    
+    .sidebar-container {
+      height: 100%;
+      overflow-y: auto;
+    }
+    
+    .map-container {
+      height: 40vh;
+    }
+    
+    .connection-status {
+      right: auto;
+      left: 0;
+      border-radius: 0 0 4px 0;
+    }
+    
+    .bin-list-container {
+      max-height: none;
+      flex: 1;
+    }
+    
+    .collapsible-content.expanded {
+      max-height: none;
+      flex: 1;
+    }
+  }
+  
+  /* Large Mobile */
+  @media (max-width: 768px) {
+    .sidebar {
+      height: 50vh;
+    }
+    
+    .sidebar-container {
+      padding: 0.5rem;
+      gap: 0.5rem;
+    }
+    
+    .map-container {
+      height: 50vh;
+    }
+    
+    .sidebar-heading h2 {
+      font-size: 1.4rem;
+    }
+    
+    .metrics-row {
+      gap: 0.3rem;
+    }
+    
+    .metric-card {
+      padding: 0.5rem;
+    }
+    
+    .priority-table th, 
+    .priority-table td {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .card h4 {
+      font-size: 1rem;
+    }
+    
+    .chart-wrapper {
+      height: 150px;
+    }
+  }
+  
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    .sidebar {
+      height: 60vh;
+    }
+    
+    .sidebar-container {
+      padding: 0.5rem;
+      gap: 0.4rem;
+    }
+    
+    .map-container {
+      height: 40vh;
+    }
+    
+    .sidebar-heading {
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .sidebar-heading h2 {
+      font-size: 1.2rem;
+    }
+    
+    .card {
+      padding: 0.5rem;
+    }
+    
+    .metrics-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    
+    .metric-card {
+      flex: 1 0 calc(33.333% - 0.5rem);
+      padding: 0.4rem;
+    }
+    
+    .filters input, 
+    .filters select {
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .settings-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .settings-row label {
+      margin-bottom: 0.25rem;
+    }
+    
+    .settings-row button,
+    .settings-row select {
+      width: 100%;
+    }
+    
+    .connection-status {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.6rem;
+    }
+    
+    .collapsible-header {
+      padding: 0.5rem;
+    }
+    
+    .chart-wrapper {
+      height: 120px;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    body {
+      display: block;
+    }
+    
+    .sidebar, 
+    .map-container {
+      width: 100%;
+      height: auto !important;
+    }
+    
+    .sidebar-container {
+      overflow: visible !important;
+    }
+    
+    .dev-btn, 
+    .dev-panel, 
+    .connection-status {
+      display: none !important;
+    }
+    
+    #map {
+      height: 400px !important;
+      page-break-after: always;
+    }
+    
+    .collapsible-content {
+      height: auto !important;
+    }
+    
+    .bin-list-container,
+    .table-container {
+      max-height: none !important;
+      overflow: visible !important;
+    }
+  }

@@ -1,0 +1,408 @@
+/* 
+ * vehicle.css
+ * Styles for vehicle assignment panel and related elements
+ */
+
+/* Vehicle Assignment Panel */
+.vehicle-panel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -650px;
+    width: 650px;
+    max-width: 100%;
+    background: var(--sidebar-bg);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 1px solid var(--border-color);
+  }
+  
+  .vehicle-panel.active {
+    right: 0;
+  }
+  
+  .vehicle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .vehicle-header h3 {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .vehicle-header h3 .icon {
+    font-size: 1.4rem;
+  }
+  
+  .vehicle-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    overflow-y: auto;
+    gap: 1.5rem;
+  }
+  
+  /* Vehicle Controls Section */
+  .vehicle-controls {
+    background: var(--input-bg);
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .control-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .control-section label {
+    font-weight: 500;
+    color: var(--accent-color);
+  }
+  
+  .vehicle-selector-wrapper {
+    position: relative;
+  }
+  
+  .vehicle-selector-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    pointer-events: none;
+    font-size: 0.8rem;
+  }
+  
+  .vehicle-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    border-radius: 6px;
+    font-size: 1rem;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .vehicle-select:focus {
+    outline: 2px solid var(--accent-color);
+  }
+  
+  /* Assignment Method Radio Buttons */
+  .assignment-method {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .radio-label input {
+    cursor: pointer;
+  }
+  
+  /* Bin Selection Section */
+  .assignment-section {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assignment-section h4 {
+    margin: 0 0 1rem 0;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  .filter-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: var(--input-bg);
+    border-radius: 6px;
+    align-items: center;
+  }
+  
+  .filter-controls label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .bin-list-wrapper {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+  }
+  
+  .bin-assignment-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .bin-assignment-table th,
+  .bin-assignment-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .bin-assignment-table th {
+    background: var(--input-bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .bin-assignment-table tr:hover {
+    background: var(--input-bg);
+  }
+  
+  .bin-assignment-table tr.critical-row {
+    background-color: rgba(255, 82, 82, 0.15);
+  }
+  
+  .bin-assignment-table tr.warning-row {
+    background-color: rgba(255, 159, 0, 0.15);
+  }
+  
+  /* Assignment Info Section */
+  .assignment-info {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assignment-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .stat-item {
+    flex: 1;
+    min-width: 120px;
+    background: var(--input-bg);
+    padding: 0.75rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    color: #95a5a6;
+    margin-bottom: 0.25rem;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .primary-btn,
+  .secondary-btn {
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .primary-btn {
+    background: var(--accent-color);
+    color: white;
+  }
+  
+  .primary-btn:hover {
+    background: var(--accent-hover);
+  }
+  
+  .secondary-btn {
+    background: var(--input-bg);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+  }
+  
+  .secondary-btn:hover {
+    background: var(--hover-bg);
+  }
+  
+  /* Activity Log */
+  .vehicle-activity {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .activity-header h4 {
+    margin: 0;
+    color: var(--accent-color);
+  }
+  
+  .mini-btn {
+    background: var(--input-bg);
+    border: none;
+    color: var(--text-light);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+  }
+  
+  .mini-btn:hover {
+    background: var(--hover-bg);
+  }
+  
+  .mini-btn .icon {
+    font-size: 0.9rem;
+  }
+  
+  .activity-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    background: var(--input-bg);
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+  
+  .log-message {
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+  }
+  
+  .log-message:last-child {
+    border-bottom: none;
+  }
+  
+  .log-time {
+    color: #95a5a6;
+    margin-right: 0.5rem;
+    font-family: monospace;
+  }
+  
+  .log-text {
+    color: var(--text-light);
+  }
+  
+  /* Card in sidebar */
+  .vehicle-toggle-card {
+    margin-top: 0;
+  }
+  
+  /* Depot Marker */
+  .depot-marker {
+    z-index: 1000;
+  }
+  
+  .depot-marker-icon {
+    background-color: var(--accent-color);
+    border: 3px solid white;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Route line styles */
+  .collection-route {
+    stroke: var(--accent-color);
+    stroke-width: 4;
+    stroke-opacity: 0.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 10, 7;
+    animation: dash 30s linear infinite;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -1000;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .vehicle-panel {
+      width: 100%;
+    }
+    
+    .assignment-stats {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+  }
+  
+  /* Vehicle icon for map */
+  .vehicle-icon-container {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: -5px;
+    text-shadow: 0 0 3px black;
+  }
+  
+  .vehicle-info {
+    background-color: rgba(52, 152, 219, 0.8);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    color: white;
+    margin-top: -5px;
+    display: inline-block;
+  }

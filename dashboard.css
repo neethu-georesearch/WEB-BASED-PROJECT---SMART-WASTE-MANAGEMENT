@@ -1,0 +1,182 @@
+/* 
+ * dashboard.css
+ * Dashboard-specific styles for metrics, charts, and status indicators
+ */
+
+/* Metrics Display */
+.metrics-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  
+  .metric-card {
+    flex: 1;
+    background: var(--input-bg);
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 0.25rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .metric-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .metric-card:first-child {
+    margin-left: 0;
+  }
+  
+  .metric-card:last-child {
+    margin-right: 0;
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .critical .metric-value {
+    color: var(--critical);
+  }
+  
+  .warning .metric-value {
+    color: var(--warning);
+  }
+  
+  .normal .metric-value {
+    color: var(--normal);
+  }
+  
+  .metric-label {
+    font-size: 0.875rem;
+    color: #95a5a6;
+    margin-top: 0.25rem;
+  }
+  
+  /* Chart Container */
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+  }
+  
+  /* Status Colors */
+  .status-critical {
+    color: var(--critical);
+  }
+  
+  .status-warning {
+    color: var(--warning);
+  }
+  
+  .status-safe {
+    color: var(--normal);
+  }
+  
+  /* Fill Level Progress Bar Status Colors */
+  .progress-fill.critical {
+    background-color: var(--critical);
+  }
+  
+  .progress-fill.warning {
+    background-color: var(--warning);
+  }
+  
+  .progress-fill.safe {
+    background-color: var(--normal);
+  }
+  
+  /* Status Indicators */
+  .status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+  
+  .status-indicator.critical {
+    background-color: var(--critical);
+  }
+  
+  .status-indicator.warning {
+    background-color: var(--warning);
+  }
+  
+  .status-indicator.safe {
+    background-color: var(--normal);
+  }
+  
+  /* Chart Legend */
+  .chart-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  
+  .chart-legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .chart-legend-color {
+    width: 10px;
+    height: 10px;
+    margin-right: 0.25rem;
+    border-radius: 2px;
+  }
+  
+  /* Timeline View */
+  .timeline-view {
+    height: 180px;
+    margin-top: 1rem;
+  }
+  
+  /* Leaflet Marker Popups */
+  .bin-popup {
+    min-width: 200px;
+  }
+  
+  .bin-popup h3 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+  }
+  
+  .bin-popup p {
+    margin: 5px 0;
+  }
+  
+  /* Enhanced bin list in collapsed view */
+  #priority-items .critical-row {
+    background-color: rgba(255, 82, 82, 0.15);
+  }
+  
+  #priority-items .warning-row {
+    background-color: rgba(255, 159, 0, 0.15);
+  }
+  
+  /* Tooltip and data display */
+  .data-tooltip {
+    position: absolute;
+    background-color: var(--sidebar-bg);
+    color: var(--text-light);
+    padding: 8px 12px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.85rem;
+    max-width: 220px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .data-tooltip.visible {
+    opacity: 1;
+  }
